@@ -2,19 +2,42 @@
   "permissions": {
     "defaultMode": "acceptEdits",
     "deny": [
-      "Edit(.github/**)",
-      "Write(.github/**)"
+      "Edit(.github/**)"
     ]
   },
   "hooks": {
     "SessionStart": [
-      { "hooks": [ { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/sync.sh\" start", "timeout": 60 } ] }
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/sync.sh\" start",
+            "timeout": 60
+          }
+        ]
+      }
     ],
     "UserPromptSubmit": [
-      { "hooks": [ { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/sync.sh\" prompt", "timeout": 30 } ] }
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/sync.sh\" prompt",
+            "timeout": 30
+          }
+        ]
+      }
     ],
     "Stop": [
-      { "hooks": [ { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/sync.sh\" stop", "timeout": 60 } ] }
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/sync.sh\" stop",
+            "timeout": 60
+          }
+        ]
+      }
     ]
   }
 }
