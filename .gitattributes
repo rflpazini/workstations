@@ -1,0 +1,3 @@
+# Notes are merged line by line, keeping both sides, so two devices writing
+# to the same file at the same time never create a conflict someone has to fix.
+*.md merge=union

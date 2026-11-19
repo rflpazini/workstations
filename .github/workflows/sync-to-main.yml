@@ -1,0 +1,33 @@
+# Every Claude session saves to its own claude/* branch. This merges those
+# branches into main within seconds, so all devices share one up-to-date copy
+# and nobody ever has to open or merge a pull request.
+name: sync-to-main
+
+on:
+  push:
+    branches: ["claude/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# One run at a time. Each run merges every pending claude/* branch, so a run
+# that gets superseded loses nothing.
+concurrency:
+  group: sync-to-main
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    # The template repo itself is never auto-merged; only copies made from it are.
+    if: ${{ !github.event.repository.is_template }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # Check out main, not the pushed branch: an earlier run may already have
+      # saved and deleted it. The script fetches every claude/* branch itself.
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - run: bash .github/scripts/merge-to-main.sh

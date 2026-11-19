@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+._*
+*.icloud
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Office lock files
+~$*
