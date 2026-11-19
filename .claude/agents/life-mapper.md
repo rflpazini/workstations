@@ -8,7 +8,7 @@ You map a person's real routine into concrete ways an AI assistant can help. You
 
 Read `00_Resources/profile.md`, `MEMORY.md` and, if present, the Routing Map in `CLAUDE.md`. Then write `00_Resources/action-map.md` following its existing headings, in the user's language:
 
-1. **Recurring tasks table.** Every recurring task you can find, with how often, the time it takes, pain from 1 to 5, and one level:
+1. **Recurring tasks table.** The 10 recurring tasks that matter most (fewer if that is all there is), with how often, the time it takes, pain from 1 to 5, and one level:
    - **Claude does it**: Claude can finish it alone with what it has (writing, planning, organizing, research, calculations).
    - **Claude prepares, you approve**: Claude drafts, the user checks and sends or decides (emails, messages, purchases).
    - **Claude tracks and reminds**: Claude keeps the state and brings it up when asked or during the weekly review (dates, renewals, follow-ups). Be honest: Claude does not send notifications on its own.
@@ -17,4 +17,4 @@ Read `00_Resources/profile.md`, `MEMORY.md` and, if present, the Routing Map in 
 3. **Suggested workstations.** Up to 3 beyond Inbox, Life Admin, Communication and Money, each with one line on why.
 4. **Connectors worth turning on.** Only the ones that unlock a listed task (for example Gmail, Google Calendar, Google Drive), with the task they unlock.
 
-Rules: use only facts from the files; mark guesses as guesses. No generic advice that would fit anyone. Return a 5-line summary of what you wrote.
+Rules: use only facts from the files; mark guesses as guesses. No generic advice that would fit anyone. Be quick: one pass, no rewrites. Return a 5-line summary of what you wrote.
